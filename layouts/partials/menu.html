@@ -1,0 +1,24 @@
+{{ if or .Site.Menus.social .Site.Menus.sections .Site.Menus.links }}
+<nav>
+  {{ if or .Site.Menus.sections .Site.Menus.links }}
+  <ul>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.sections }}
+      <li><a href="{{ .URL }}">{{ if $.Site.Params.menuItemPrefix }}{{ $.Site.Params.menuItemPrefix }}{{ end }}{{ .Identifier }}</a></li>
+    {{ end }}
+
+    {{ range .Site.Menus.links }}
+      <li><a href="{{ .URL }}">{{ if $.Site.Params.menuItemPrefix }}{{ $.Site.Params.menuItemPrefix }}{{ end }}{{ .Identifier }}</a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  {{ if .Site.Menus.social }}
+  <ul>
+    {{ range .Site.Menus.social }}
+      <li><a target="hugo_ext" href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</nav>
+{{ end }}

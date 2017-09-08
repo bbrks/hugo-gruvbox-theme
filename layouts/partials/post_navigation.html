@@ -1,0 +1,20 @@
+{{ if or .PrevInSection .NextInSection }}
+<div class="pagination">
+  <div class="left">
+  {{ if .PrevInSection }}
+    <a href="{{ .PrevInSection.URL }}">
+      <time datetime="{{ .PrevInSection.Date }}">&laquo; {{ .PrevInSection.Date.Format $.Site.Params.dateFormat }}</time>
+      {{ .PrevInSection.LinkTitle }}
+    </a>
+  {{ end }}
+  </div>
+  <div class="right">
+  {{ if .NextInSection }}
+    <a href="{{ .NextInSection.URL }}">
+      <time datetime="{{ .NextInSection.Date }}">{{ .NextInSection.Date.Format $.Site.Params.dateFormat }} &raquo;</time>
+      {{ .NextInSection.LinkTitle }}
+    </a>
+  {{ end }}
+  </div>
+</div>
+{{ end }}

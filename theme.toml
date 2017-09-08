@@ -1,0 +1,12 @@
+name = "gruvbox"
+license = "MIT"
+licenselink = "https://github.com/bbrks/hugo-gruvbox-theme/blob/master/LICENSE.md"
+description = "Hugo theme inspired by gruvbox Retro groove color scheme for Vim"
+homepage = "https://github.com/bbrks/hugo-gruvbox-theme"
+tags = ["dark", "simple", "retro", "groove", "pastel"]
+features = []
+min_version = "0.26"
+
+[author]
+  name = "Ben Brooks"
+  homepage = "https://bbrks.me"

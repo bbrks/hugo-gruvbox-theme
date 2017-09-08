@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <article>
+    <header>
+      <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
+      <time datetime="{{ .Date }}">{{ .Date.Format $.Site.Params.dateFormat }}</time>
+    </header>
+    <div class="body">
+      {{ .Content }}
+    </div>
+  </article>
+
+  {{ partial "post_navigation.html" . }}
+{{ end }}

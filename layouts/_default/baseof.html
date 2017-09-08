@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>
+    {{ if $.Site.Params.titlePrefix}}{{ $.Site.Params.titlePrefix }}{{ end }}
+    {{ block "title" . }}{{ with .Title }}{{ . }}{{ end }}{{ end }}
+    {{ if $.Site.Params.titleSuffix}}{{ $.Site.Params.titleSuffix }}{{ end }}
+  </title>
+
+  {{ .Hugo.Generator }}
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{ if .RSSLink }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ end }}
+
+  <link href="{{ "logo.png" | relURL }}" rel="shortcut icon">
+  <link href="{{ "css/style.css" | relURL }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <header>
+    <div class="left logo">
+      <h1><a href="/">{{ .Site.Title }}</a></h1>
+      {{ if $.Site.Params.description }}<p>{{ $.Site.Params.description }}</p>{{ end }}
+    </div>
+
+    {{ partial "menu.html" . }}
+
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ block "footer" . }}
+  <footer>
+    {{ if not $.Site.Params.hideGopher }}
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    {{ end }}
+
+    {{ partial "menu.html" . }}
+
+    <p>&copy; {{ now.Format "2006" }} <a href="">{{ .Site.Title }}</a></p>
+  </footer>
+  {{ end }}
+
+</body>
+
+</html>

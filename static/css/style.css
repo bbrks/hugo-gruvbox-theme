@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a, a:visited, a:active, a:hover {
+  color: #458588;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #83a598;
+  text-decoration: underline;
+}
+
+.gopher::after {
+  content: '';
+  display: inline-block;
+  vertical-align: top;
+  animation: gopherwave 2s infinite;
+}
+
+.gopher:hover::after {
+  animation: gopherwave .5s infinite;
+}
+
+@keyframes gopherwave {
+  0%, 100% {
+    content: 'ˏʕ⚆ϖ⚆ʔˎ';
+    color: #689d6a;
+  }
+  50% {
+    content: '`ʕ◔ϖ◔ʔ´';
+    color: #8ec07c;
+  }
+}
+
+body {
+  font-family: "Go Mono", "Source Code Pro", "Monaco", monospace;
+  font-size: 14px;
+  background: #282828;
+  color: #ebdbb2;
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+body>header::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+body>header, main, body>footer {
+  margin: 5em 0;
+  padding: 0 2em;
+}
+
+body>footer {
+  text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.logo {
+  background: no-repeat top left/64px 64px url('../logo.png');
+  min-height: 64px;
+  padding: 0 0 0 calc(64px + 1em);
+  margin-top: -1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+body>header>.left>h1>a {
+  font-weight: normal;
+  color: #d79921;
+}
+
+body>header nav {
+  text-align: right;
+}
+
+nav>ul {
+  list-style-type: none;
+  margin: .75em 0;
+}
+
+nav>ul>li {
+  display: inline;
+}
+
+nav>ul>li>a.active {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    float: none;
+  }
+  nav {
+    margin: 2em 0;
+  }
+  nav>ul {
+    text-align: center;
+    display: block;
+  }
+  body>header, main, body>footer, main>article {
+    margin: 3em 0;
+  }
+}
+
+article {
+  background: #fbf1c7;
+  color: #3c3836;
+  padding: 2em;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
+  margin: 5em 0;
+}
+
+article>header {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ebdbb2;
+}
+
+article>header::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+article>header>h1 {
+  float: left;
+}
+
+article>header>time {
+  color: #7c6f64;
+  float: right;
+}
+
+article>p {
+  margin: 1em 0;
+}
+
+article>footer {
+  margin-top: 1em;
+}
+
+article>.body pre {
+  background: #282828;
+  color: #ebdbb2;
+  padding: 1em;
+  font-size: 16px;
+}
+
+article>.body h1, article>.body h2, article>.body h3, article>.body h4, article>.body h5, article>.body h6 {
+  margin-top: 2em;
+}
+
+article>.body hr {
+  margin: 1em 0;
+  border: 0;
+  border-bottom: 1px solid #ebdbb2;
+}
+
+article>.body ol, article>.body ul {
+  margin-left: 3em;
+}
+
+article>.body {
+  line-height: 1.4em;
+}
+
+article>.body p {
+  margin: 1em 0;
+}
+
+.pagination .left, .pagination .right {
+  display: inline-block;
+  width: 50%;
+  min-height: 1em;
+}
+
+.pagination .right {
+  text-align: right;
+}
+
+.pagination a, .pagination a:visited, .pagination a:active, .pagination a:hover {
+  color: #d79921;
+}
+
+.pagination a:hover {
+  color: #fabd2f;
+}
+
+.pagination time {
+  display: block;
+  color: #665c54;
+}
