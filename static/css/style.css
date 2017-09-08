@@ -98,6 +98,10 @@ nav>ul>li>a.active {
 @media (max-width: 600px) {
   .logo {
     float: none;
+    padding: 0;
+  }
+  header {
+    text-align: center;
   }
   nav {
     margin: 2em 0;
