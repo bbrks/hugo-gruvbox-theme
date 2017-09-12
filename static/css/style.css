@@ -116,7 +116,7 @@ nav>ul>li>a.active {
 }
 
 article {
-  background: #fbf1c7;
+  background: #fffbe9;
   color: #3c3836;
   padding: 2em;
   box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
@@ -124,9 +124,23 @@ article {
 }
 
 article>header {
+  border-bottom: 1px solid #ebdbb2;
   margin-bottom: 1em;
   padding-bottom: 1em;
-  border-bottom: 1px solid #ebdbb2;
+}
+
+article>footer {
+  border-top: 1px solid #ebdbb2;
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+.button {
+  color: #ebdbb2;
+  background: #458588;
+  padding: 1em;
+  cursor: pointer;
+  display: inline-block;
 }
 
 article>header::after {
@@ -152,11 +166,18 @@ article>footer {
   margin-top: 1em;
 }
 
-article>.body pre {
+article>.body code {
+  display: block;
   background: #282828;
   color: #ebdbb2;
   padding: 1em;
   font-size: 16px;
+}
+
+.alert.alert-warning {
+  background: #d79921;
+  border: 1px solid #b57614;
+  padding: 1em;
 }
 
 article>.body h1, article>.body h2, article>.body h3, article>.body h4, article>.body h5, article>.body h6 {
@@ -179,6 +200,10 @@ article>.body {
 
 article>.body p {
   margin: 1em 0;
+}
+
+article>.body img {
+  max-width: 100%;
 }
 
 .pagination .left, .pagination .right {

@@ -1,0 +1,15 @@
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//{{ $.Site.DisqusShortname }}.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  {{ if $.Site.Params.autoLoadDisqusComments }}
+  loadDisqusComments();
+  {{ end }}
+</script>

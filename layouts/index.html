@@ -1,0 +1,16 @@
+{{ define "main" }} {{ range .Paginator.Pages }}
+<article>
+  <header>
+    <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
+    <time datetime="{{ .Date }}">{{ .Date.Format $.Site.Params.dateFormat }}</time>
+  </header>
+  <div class="body">
+    {{ .Content | safeHTML | truncate $.Site.Params.postTruncateLength "…" }}
+  </div>
+  {{ if .Truncated }}
+  <footer>
+    <a href="{{ .RelPermalink }}">Read More&hellip; &raquo;</a>
+  </footer>
+  {{ end }}
+</article>
+{{ end }} {{ partial "pagination.html" . }} {{ end }}

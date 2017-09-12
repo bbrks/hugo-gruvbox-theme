@@ -1,16 +1,18 @@
-{{ define "main" }} {{ range .Paginator.Pages }}
+{{ define "main" }}
 <article>
   <header>
-    <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
-    <time datetime="{{ .Date }}">{{ .Date.Format $.Site.Params.dateFormat }}</time>
+    <h1>All {{ .Type }}</h1>
   </header>
-  <div class="body">
-    {{ default .Summary .Params.description }}
-  </div>
-  {{ if .Truncated }}
-  <footer>
-    <a href="{{ .RelPermalink }}">Read More&hellip; &raquo;</a>
-  </footer>
-  {{ end }}
+    <div class="body">
+      <ol style="list-style-type:disc">
+        {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}" title="{{ .Description }}">
+            <time datetime="{{ .Date }}">{{ .Date.Format $.Site.Params.dateFormat }}</time> - {{ .Title }}
+          </a>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
 </article>
-{{ end }} {{ partial "pagination.html" . }} {{ end }}
+{{ end }}

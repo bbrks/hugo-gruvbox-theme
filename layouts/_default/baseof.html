@@ -4,11 +4,21 @@
 <head>
   <meta charset="utf-8">
 
-  <title>
-    {{ if $.Site.Params.titlePrefix}}{{ $.Site.Params.titlePrefix }}{{ end }}
-    {{ block "title" . }}{{ with .Title }}{{ . }}{{ end }}{{ end }}
-    {{ if $.Site.Params.titleSuffix}}{{ $.Site.Params.titleSuffix }}{{ end }}
-  </title>
+  <title>{{ if $.Site.Params.titlePrefix}}{{ $.Site.Params.titlePrefix }}{{ end }}{{ block "title" . }}{{ with .Title }}{{ . }}{{ end }}{{ end }}{{ if $.Site.Params.titleSuffix}}{{ $.Site.Params.titleSuffix }}{{ end }}</title>
+
+  <meta name="author" content="{{ .Site.Author.name }}" />
+
+  {{ if .Keywords }}
+  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+  {{ else if .Site.Params.keywords }}
+  <meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
+  {{ end }}
+
+  {{ if .Description }}
+  <meta name="description" content="{{ .Description }}">
+  {{ else if .Site.Params.description }}
+  <meta name="description" content="{{ .Site.Params.description }}">
+  {{ end }}
 
   {{ .Hugo.Generator }}
 
