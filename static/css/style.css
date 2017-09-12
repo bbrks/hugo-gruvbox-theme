@@ -153,7 +153,7 @@ article>header>h1 {
   float: left;
 }
 
-article>header>time {
+article>header>time, .disqus-comment-count {
   color: #7c6f64;
   float: right;
 }

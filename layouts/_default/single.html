@@ -11,14 +11,13 @@
 
   {{ if $.Site.DisqusShortname }}
     <footer>
-      {{ partial "disqusButton.html" . }}
+      {{ partial "disqus/comments.html" . }}
     </footer>
   {{ end }}
 </article>
 
 {{ partial "post_navigation.html" . }}
 
-  {{ if $.Site.DisqusShortname }}
-    {{ partial "disqusJavascript.html" . }}
-  {{ end }}
+{{ partial "disqus/comments_script.html" . }}
+
 {{ end }}

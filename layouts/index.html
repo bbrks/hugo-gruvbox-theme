@@ -1,4 +1,5 @@
-{{ define "main" }} {{ range .Paginator.Pages }}
+{{ define "main" }}
+{{ range .Paginator.Pages }}
 <article>
   <header>
     <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
@@ -10,7 +11,14 @@
   {{ if .Truncated }}
   <footer>
     <a href="{{ .RelPermalink }}">Read More&hellip; &raquo;</a>
+    {{ partial "disqus/count.html" . }}
   </footer>
   {{ end }}
 </article>
-{{ end }} {{ partial "pagination.html" . }} {{ end }}
+{{ end }}
+
+{{ partial "pagination.html" . }}
+
+{{ partial "disqus/count_script.html" . }}
+
+{{ end }}

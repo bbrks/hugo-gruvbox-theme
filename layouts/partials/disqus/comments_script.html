@@ -1,3 +1,4 @@
+{{ if $.Site.DisqusShortname }}
 <script type="text/javascript">
   function loadDisqusComments() {
     var e = document.createElement("script");
@@ -9,7 +10,8 @@
     .appendChild(e);
   }
 
-  {{ if $.Site.Params.autoLoadDisqusComments }}
+  {{ if $.Site.Params.disqusAutoLoad }}
   loadDisqusComments();
   {{ end }}
 </script>
+{{ end }}
