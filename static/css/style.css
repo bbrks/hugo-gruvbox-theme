@@ -166,12 +166,22 @@ article>footer {
   margin-top: 1em;
 }
 
-article>.body code {
+article>.body pre code {
   display: block;
+  padding: 1em;
+  margin: 2em;
   background: #282828;
   color: #ebdbb2;
-  padding: 1em;
   font-size: 16px;
+  overflow-x: auto;
+}
+
+article>.body code {
+  display: inline;
+  padding: .05em .25em;
+  background: #ebdbb2;
+  color: #282828;
+  border-radius: 3px;
 }
 
 .alert.alert-warning {
