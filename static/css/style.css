@@ -59,12 +59,47 @@ body>footer {
   text-align: center;
 }
 
+body>footer>* {
+  margin: 2em 0;
+  display: block;
+}
+
+.rss,
+.rss:visited,
+.rss:hover,
+.rss:active {
+  color: #f26522;
+}
+
+.copyright,
+footer>nav {
+  opacity: 0.66;
+}
+
 .left {
   float: left;
 }
 
+.term::before {
+  content: '> ';
+}
+
+.term::after {
+  content: '_';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 0;
+  }
+  50%, 100% {
+    opacity: 1;
+  }
+}
+
 .logo {
-  background: no-repeat top left/64px 64px url('../logo.png');
+  background: no-repeat top left/64px 64px url('../logo.jpg');
   min-height: 64px;
   padding: 0 0 0 calc(64px + 1em);
   margin-top: -1em;
