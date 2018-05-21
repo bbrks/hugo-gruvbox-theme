@@ -200,6 +200,12 @@ article>.body hr {
   border-bottom: 1px solid #ebdbb2;
 }
 
+article>.body blockquote {
+  margin-left: 2em;
+  padding-left: 2em;
+  border-left: 2px solid #ebdbb2;
+}
+
 article>.body ol, article>.body ul {
   margin-left: 3em;
 }
