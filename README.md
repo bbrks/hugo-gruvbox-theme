@@ -20,3 +20,48 @@ If you already have a working Hugo installation, skip to step 3.
 6. `echo 'theme = "gruvbox"' >> config.toml`
 7. `hugo new posts/first-post.md`
 8. `hugo server --watch --buildDrafts`
+
+## Configuration
+
+The following parameters can be specified and tweaked in your Hugo config for extra customisation.
+
+```toml
+paginate = 5
+disqusShortname = "bbrks"
+
+[params]
+  author = { name = "Ben Brooks" }
+  description = "Software Engineer & Gopher"
+  keywords = ["software engineering", "golang", "gopher", "blog", "programmer", "bbrks"]
+  titlePrefix = ""
+  titleSuffix = " | bbrks.me"
+  dateFormat = "2006-01-02"
+  menuItemPrefix = "~/"
+  postTruncateLength = 250
+  disqusAutoLoad = false
+  disqusAutoLoadCount = true
+  googleAnalyticsTrackingId = "UA-1234567-8"
+
+[[menu.links]]
+  name = "CV"
+  identifier = "cv.pdf"
+  url = "https://rawgit.com/bbrks/cv/master/cv.pdf"
+  weight = 9999
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/bbrks_"
+  weight = 1
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/bbrks"
+  weight = 10
+[[menu.social]]
+  name = "Keybase"
+  url = "https://keybase.io/bbrks"
+  weight = 30
+[[menu.social]]
+  name = "LinkedIn"
+  url = "https://uk.linkedin.com/in/bbrks"
+  weight = 100
+```
