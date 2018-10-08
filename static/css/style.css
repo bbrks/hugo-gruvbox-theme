@@ -71,11 +71,6 @@ body>footer>* {
   color: #f26522;
 }
 
-.copyright,
-footer>nav {
-  opacity: 0.66;
-}
-
 .left {
   float: left;
 }
