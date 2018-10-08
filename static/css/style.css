@@ -59,6 +59,18 @@ body>footer {
   text-align: center;
 }
 
+body>footer>* {
+  margin: 2em 0;
+  display: block;
+}
+
+.rss,
+.rss:visited,
+.rss:hover,
+.rss:active {
+  color: #f26522;
+}
+
 .left {
   float: left;
 }
