@@ -3,7 +3,7 @@
 <article>
   <header>
     <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
-    <time datetime="{{ .Date }}">{{ .Date.Format $.Site.Params.dateFormat | default "2006-01-02" }}</time>
+    <time datetime="{{ .Date }}">{{ .Date.Format (.Site.Params.dateFormat | default "Jan 02, 2006") }}</time>
   </header>
   <div class="body">
     {{ .Content | safeHTML | truncate $.Site.Params.postTruncateLength "…" }}
