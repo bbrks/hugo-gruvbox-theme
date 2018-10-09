@@ -38,6 +38,7 @@ disqusShortname = "bbrks"
   dateFormat = "2006-01-02"
   menuItemPrefix = "~/"
   postTruncateLength = 250
+  hideGopher = false
   disqusAutoLoad = false
   disqusAutoLoadCount = true
   googleAnalyticsTrackingId = "UA-1234567-8"

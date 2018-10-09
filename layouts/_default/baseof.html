@@ -52,7 +52,7 @@
 
   {{ block "footer" . }}
   <footer>
-    {{ if .RSSLink }}<a class="rss" href="{{ .RSSLink }}" title="Keep RSS alive! Subscribe">rss</a>{{ end }}
+    {{ if .RSSLink }}<a class="rss" href="{{ .RSSLink }}" title="Subscribe to the RSS feed for {{ .Site.Title }}">rss</a>{{ end }}
 
     {{ if not $.Site.Params.hideGopher }}
       <span class="gopher" title="Proudly powered by Go!"></span>
