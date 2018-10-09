@@ -2,7 +2,7 @@
 <article>
   <header>
     <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
-    <time datetime="{{ .Date }}">{{ .Date.Format $.Site.Params.dateFormat | default "2006-01-02" }}</time>
+    <time datetime="{{ .Date }}">{{ .Date.Format $.Site.Params.dateFormat }}</time>
   </header>
 
   <div class="body">
