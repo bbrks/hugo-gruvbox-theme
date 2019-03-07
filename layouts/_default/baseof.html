@@ -27,11 +27,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+  {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-  <link href="{{ "logo.png" | relURL }}" rel="shortcut icon">
+  <link href="{{ (.Site.Params.logo | default "logo.png") | relURL }}" rel="shortcut icon">
   <link href="{{ "css/style.css" | relURL }}" rel="stylesheet" type="text/css">
+
+  {{ if .Site.Params.logo }}
+  <style type="text/css">
+    .logo {
+      background-image: url('{{ .Site.Params.logo | relURL }}');
+    }
+  </style>
+  {{ end }}
 </head>
 
 <body>
