@@ -27,7 +27,7 @@ The following parameters can be specified and tweaked in your Hugo config for ex
 
 ```toml
 paginate = 5
-disqusShortname = "bbrks"
+disqusShortname = ""
 
 [params]
   author = { name = "Ben Brooks" }
@@ -40,8 +40,7 @@ disqusShortname = "bbrks"
   postTruncateLength = 250
   hideGopher = false
   disqusAutoLoad = false
-  disqusAutoLoadCount = true
-  googleAnalyticsTrackingId = "UA-1234567-8"
+  disqusAutoLoadCount = false
 
 [[menu.links]]
   name = "CV"
