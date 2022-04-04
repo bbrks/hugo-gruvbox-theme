@@ -20,14 +20,14 @@
   <meta name="description" content="{{ .Site.Params.description }}">
   {{ end }}
 
-  {{ .Hugo.Generator }}
+  {{ hugo.Generator }}
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {{ range .AlternativeOutputFormats -}}
-  {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
   <link href="{{ (.Site.Params.logo | default "logo.png") | relURL }}" rel="shortcut icon">
@@ -60,7 +60,9 @@
 
   {{ block "footer" . }}
   <footer>
-    {{ if .RSSLink }}<a class="rss" href="{{ .RSSLink }}" title="Subscribe to the RSS feed for {{ .Site.Title }}">rss</a>{{ end }}
+    {{ with .OutputFormats.Get "rss" -}}
+       {{ printf `<a class="rss" href="%s" title="Subscribe to the RSS feed for %s">rss</a>` .Permalink $.Site.Title | safeHTML }}
+   {{ end -}}
 
     {{ if not $.Site.Params.hideGopher }}
       <span class="gopher" title="Proudly powered by Go!"></span>
