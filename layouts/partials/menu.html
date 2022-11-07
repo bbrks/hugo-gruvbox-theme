@@ -16,7 +16,7 @@
   {{ if .Site.Menus.social }}
   <ul>
     {{ range .Site.Menus.social }}
-      <li><a target="hugo_ext" href="{{ .URL }}">{{ .Name }}</a></li>
+      <li><a href="{{ .URL }}" target="hugo_ext"{{ if .Params.rel }} rel="{{ .Params.rel }}"{{ end }}>{{ .Name }}</a></li>
     {{ end }}
   </ul>
   {{ end }}
