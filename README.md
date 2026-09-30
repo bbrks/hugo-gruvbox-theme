@@ -26,8 +26,11 @@ If you already have a working Hugo installation, skip to step 3.
 The following parameters can be specified and tweaked in your Hugo config for extra customisation.
 
 ```toml
-paginate = 5
-disqusShortname = ""
+[pagination]
+  pagerSize = 5
+
+[services.disqus]
+  shortname = ""
 
 [params]
   author = { name = "Ben Brooks" }
