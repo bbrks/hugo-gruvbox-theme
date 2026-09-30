@@ -5,7 +5,8 @@ description = "Hugo theme inspired by gruvbox Retro groove color scheme for Vim"
 homepage = "https://github.com/bbrks/hugo-gruvbox-theme"
 tags = ["dark", "simple", "retro", "groove", "pastel"]
 features = []
-min_version = "0.26"
+[module.hugoVersion]
+  min = "0.158.0"
 
 [author]
   name = "Ben Brooks"
